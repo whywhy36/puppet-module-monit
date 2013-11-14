@@ -12,7 +12,7 @@ describe 'monit::monitor', :type => :define do
     end
 
     context "both pidfile and matching specified" do
-      let(:title) { 'monit-monitor-both-pidfile-mathcing' }
+      let(:title) { 'monit-monitor-both-pidfile-matching' }
 
       let(:params) {
         {
