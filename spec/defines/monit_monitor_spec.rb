@@ -25,6 +25,34 @@ describe 'monit::monitor', :type => :define do
       }
     end
 
+    context "both program_file and pidfile specified" do
+      let(:title) { 'monit-monitor-both-program_file-pidfile' }
+
+      let(:params) {
+        {
+          'program_file' => '/usr/local/bin/some_program',
+          'pidfile'      => '/var/run/monit.pid',
+        }
+      }
+      it {
+        expect { should raise_error(Puppet::Error) }
+      }
+    end
+
+    context "both program_file and matching specified" do
+      let(:title) { 'monit-monitor-both-program_file-matching' }
+
+      let(:params) {
+        {
+          'program_file' => '/usr/local/bin/some_program',
+          'matching'     => 'some_process_name',
+        }
+      }
+      it {
+        expect { should raise_error(Puppet::Error) }
+      }
+    end
+
     context "no pidfile nor matching nor program_file specified" do
       let(:title) { 'monit-monitor-no-pidfile-matching-program_file' }
 
