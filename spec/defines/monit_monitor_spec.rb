@@ -20,18 +20,18 @@ describe 'monit::monitor', :type => :define do
           'matching' => 'some_process_name',
         }
       }
-      it { 
+      it {
         expect { should raise_error(Puppet::Error) }
-      } 
+      }
     end
 
     context "no pidfile nor matching specified" do
       let(:title) { 'monit-monitor-no-pidfile-mathcing' }
 
       let(:params) { }
-      it { 
+      it {
         expect { should raise_error(Puppet::Error) }
-      } 
+      }
     end
 
     context "default usage (osfamily = RedHat)" do
