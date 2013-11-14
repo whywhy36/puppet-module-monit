@@ -25,8 +25,8 @@ describe 'monit::monitor', :type => :define do
       }
     end
 
-    context "no pidfile nor matching specified" do
-      let(:title) { 'monit-monitor-no-pidfile-mathcing' }
+    context "no pidfile nor matching nor program_file specified" do
+      let(:title) { 'monit-monitor-no-pidfile-matching-program_file' }
 
       let(:params) { }
       it {
