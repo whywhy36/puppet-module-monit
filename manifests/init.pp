@@ -10,6 +10,7 @@
 # [*delay*]     - How long to wait before actually performing any action
 # [*logfile*]   - What file for monit use for logging
 # [*mailserver] - Which mailserver to use
+# [*collector]  - mmonit server url
 # === Examples
 #
 #  class { 'monit':
@@ -35,6 +36,7 @@ class monit (
   $logfile    = 'UNSET',
   $mailserver = 'localhost',
   $mailformat = undef,
+  $collector  = undef,
 ) {
   include monit::params
 
