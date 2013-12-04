@@ -74,6 +74,9 @@ set mailserver <%= @mailserver %>
 ## see http://mmonit.com/).
 #
 # set mmonit http://monit:monit@192.168.1.10:8080/collector
+<% unless @collector.nil? -%>
+  set mmonit <%= @collector %>/collector
+<% end -%>
 #
 #
 ## Monit by default uses the following alert mail format:
