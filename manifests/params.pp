@@ -33,7 +33,7 @@ class monit::params {
     }
     'Debian': {
       $conf_file        = '/etc/monit/monitrc'
-      $conf_dir         = '/etc/monit/conf.d'
+      $conf_dir         = '/etc/monit/monitrc.d'
       $default_conf     = '/etc/default/monit'
       $monit_package    = 'monit'
       $monit_service    = 'monit'
@@ -62,6 +62,9 @@ class monit::params {
             }
             '12.10': {
               $default_conf_tpl = 'monit.default.conf.ubuntu.quantal.erb'
+            }
+            '13.10': {
+              $default_conf_tpl = 'monit.default.conf.ubuntu.saucy.erb'
             }
             default: {
               fail("Unsupported lsbdistid:${::lsbdistid}/${::lsbdistrelease}")
