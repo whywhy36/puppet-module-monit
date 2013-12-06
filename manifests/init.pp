@@ -11,6 +11,13 @@
 # [*logfile*]   - What file for monit use for logging
 # [*mailserver] - Which mailserver to use
 # [*collector]  - mmonit server url
+# [*httpd_port*]      - Configures the httpd port to be used, by default 2812,
+# [*enable_ssl*]      - Enable ssl, false by default
+# [*pemfile*]         - Path to the pemfile
+# [*allow_self_cert*] - Allow self certification, by default set to false
+# [*only_localhost*]  - Allow connections from localhost only, by default true
+# [*allows*]          - Allowed connections, by default 'localhost'. Use an
+#                     - array for multiple connections.
 # === Examples
 #
 #  class { 'monit':
@@ -37,6 +44,12 @@ class monit (
   $mailserver = 'localhost',
   $mailformat = undef,
   $collector  = undef,
+  $httpd_port = '2812',
+  $enable_ssl = false,
+  $pemfile = undef,
+  $allow_self_cert = false,
+  $only_localhost = true,
+  $allows = 'localhost',
 ) {
   include monit::params
 
